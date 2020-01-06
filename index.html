@@ -12,6 +12,60 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Tic-Tac-Toe</h1>
+
+      <p id='message'></p>
+      <form id='sign-up'>
+        <fieldset>
+          <legend>Sign Up</legend>
+        <input name="credentials[email]" type="email" placeholder="Email">
+        <input name="credentials[password]" type="password" placeholder="Password">
+        <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
+        <input type="submit" value="Sign-Up!">
+      </fieldset>
+      </form>
+
+      <form id='sign-in'>
+      <fieldset>
+      <legend>Sign In</legend>
+      <input name="credentials[email]" type='email' placeholder="Email">
+      <input name="credentials[password]" type='password' placeholder="Password">
+      <input type="submit" value="Sign-In">
+      </fieldset>
+      </form>
+
+      <form id='change-password'>
+        <fieldset>
+        <legend>Change Password</legend>
+        <input name="passwords[old]" type='password' placeholder="Enter Password">
+        <input name="passwords[new]" type='password' placeholder="Enter New Password">
+        <input type="submit" value="Change Password">
+      </fieldset>
+      </form>
+
+      <form id='logout'>
+      <button type='submit'>Logout</button>
+      </form>
+
+      <div class="container">
+      <div class="new">
+        <h1>Game Board</h1>
+        <div class="row">
+          <div class="col-4" id="indexZero">0</div>
+          <div class="col-4" id="indexOne">1</div>
+          <div class="col-4" id="indexTwo">2</div>
+
+          <div class="col-4" id="indexThree">3</div>
+          <div class="col-4" id="indexFour">4</div>
+          <div class="col-4" id="indexFive">5</div>
+
+          <div class="col-4" id="indexSix">6</div>
+          <div class="col-4" id="indexSeven">7</div>
+          <div class="col-4" id="indexEight">8</div>
+    </div>
+    </div>
+  </div>
+
+
     </body>
 </html>
