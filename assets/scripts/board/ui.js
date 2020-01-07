@@ -31,11 +31,24 @@ const changePasswordSuccess = () => {
 const changePasswordFailure = () => {
   $('#message').text('Try Again')
 }
+const logoutSuccess = () => {
+  $('#message').text('See you next time!')
+  $('#sign-up').show()
+  $('#sign-in').show()
+  $('#change-password').hide()
+  $('#logout').hide()
+}
+
+const logoutFailure = () => {
+  $('#message').text('Unsuccessful Log-Out')
+}
 module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
   signInFailure,
   changePasswordSuccess,
-  changePasswordFailure
+  changePasswordFailure,
+  logoutSuccess,
+  logoutFailure
 }
