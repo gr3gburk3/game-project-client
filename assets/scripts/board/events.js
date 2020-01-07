@@ -1,6 +1,6 @@
 'use strict'
 
-// const player = x
+let player = 'X'
 // const gameOver = false
 
 const playZero = function () {
@@ -31,7 +31,12 @@ const playEight = function () {
   $('#8').on('click', changeText)
 }
 const changeText = (event) => {
-  $(event.target).text('x')
+  $(event.target).text(player)
+  if (player === 'X') {
+    player = 'O'
+  } else {
+    player = 'X'
+  }
 }
 
 const addHandlers = () => {
