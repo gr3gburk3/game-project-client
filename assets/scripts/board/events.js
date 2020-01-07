@@ -1,67 +1,51 @@
 'use strict'
 
-// const playerX = true
+// const player = x
 // const gameOver = false
 
-/*
 const playZero = function () {
-  $('#zero').on('click', changeValue)
-  console.log('O')
+  $('#0').on('click', changeText)
 }
 const playOne = function () {
-  $('#one').on('click', changeValue)
+  $('#1').on('click', changeText)
 }
 const playTwo = function () {
-  $('#two').on('click', changeValue)
-  console.log('X')
+  $('#2').on('click', changeText)
 }
 const playThree = function () {
-  $('#three').on('click', changeValue)
+  $('#3').on('click', changeText)
 }
 const playFour = function () {
-  $('four').on('click', changeValue)
+  $('#4').on('click', changeText)
 }
 const playFive = function () {
-  $('five').on('click', changeValue)
+  $('#5').on('click', changeText)
 }
 const playSix = function () {
-  $('six').on('click', changeValue)
+  $('#6').on('click', changeText)
 }
 const playSeven = function () {
-  $('seven').on('click', changeValue)
+  $('#7').on('click', changeText)
 }
 const playEight = function () {
-  $('four').on('click', changeValue)
+  $('#8').on('click', changeText)
+}
+const changeText = (event) => {
+  $(event.target).text('x')
 }
 
-const changeValue = () => {
-  if (playerX === true && !gameOver === false) {
-    $(`#${this.id}`).text('X')
-  } else {
-    $(`#${this.id}`).text('O')
-  }
-/*
-  const playOne = function () {
-    $('#one').on('click', changeOne)
-  }
-
-  const changeOne = (event) => {
-    $(`#one`).text('x')
-  }
-
-  const addHandlers = () => {
-    playZero()
-    playOne()
-    playTwo()
-    playThree()
-    playFour()
-    playFive()
-    playSix()
-    playSeven()
-    playEight()
-  }
-*/
+const addHandlers = () => {
+  playZero()
+  playOne()
+  playTwo()
+  playThree()
+  playFour()
+  playFive()
+  playSix()
+  playSeven()
+  playEight()
+}
 
 module.exports = {
-  // addHandlers
+  addHandlers
 }
