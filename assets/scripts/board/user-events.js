@@ -10,7 +10,7 @@ const onSignUp = function () {
   const data = getFormFields(form)
   api.signUp(data)
     .then(ui.signUpSuccess)
-    // .catch(ui.signUpFailure)
+    .catch(ui.signUpFailure)
 }
 const onSignIn = function () {
   event.preventDefault()
@@ -20,11 +20,18 @@ const onSignIn = function () {
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
 }
-
+const onChangePassword = function () {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  api.changePassword(data)
+    .then(ui.changePasswordSuccess)
+    .catch(ui.changePasswordFailure)
+}
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
-  // $('#change-password').on('submit', onChangePassword)
+  $('#change-password').on('submit', onChangePassword)
   // $('#logout').on('submit', onLogout)
 }
 

@@ -10,7 +10,7 @@ const signUpSuccess = response => {
 }
 
 const signUpFailure = () => {
-  $('#message').text('Sign-up failed, please try again')
+  $('#message').text('Sign-up failed, please try again amigo')
 }
 const signInSuccess = response => {
   $('#message').text('Sign-in Successful!')
@@ -22,11 +22,20 @@ const signInSuccess = response => {
   $('#logout').show()
 }
 const signInFailure = () => {
+  $('#message').text('Try Again Friend')
+}
+const changePasswordSuccess = () => {
+  $('#message').text('Password Changed!')
+}
+
+const changePasswordFailure = () => {
   $('#message').text('Try Again')
 }
 module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
-  signInFailure
+  signInFailure,
+  changePasswordSuccess,
+  changePasswordFailure
 }
