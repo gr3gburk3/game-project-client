@@ -31,14 +31,22 @@ const playEight = function () {
   $('#8').on('click', changeText)
 }
 const changeText = (event) => {
-  $(event.target).text(player)
-  if (player === 'X') {
-    player = 'O'
-  } else {
-    player = 'X'
+  console.log(!($(event.target).hasClass('clicked')))
+  /* in if statement, if the contents of the parentheses is not true (!true)
+    no further code will run, in this case no text can be added if an element
+    has a class of clicked.
+  */
+  if (!($(event.target).hasClass('clicked'))) {
+    $(event.target).addClass('clicked')
+
+    $(event.target).text(player)
+    if (player === 'X') {
+      player = 'O'
+    } else {
+      player = 'X'
+    }
   }
 }
-
 const addHandlers = () => {
   playZero()
   playOne()
