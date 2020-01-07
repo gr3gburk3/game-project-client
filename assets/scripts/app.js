@@ -12,5 +12,5 @@ $(() => {
   userEvents.addHandlers()
   $('#change-password').hide()
   $('#logout').hide()
-  $('#sign-in').hide()
+  $('#sign-in').show()
 })
