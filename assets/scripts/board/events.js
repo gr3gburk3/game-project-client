@@ -1,7 +1,9 @@
 'use strict'
-const playerX = true
-const gameOver = false
 
+// const playerX = true
+// const gameOver = false
+
+/*
 const playZero = function () {
   $('#zero').on('click', changeValue)
   console.log('O')
@@ -46,7 +48,7 @@ const changeValue = () => {
   const changeOne = (event) => {
     $(`#one`).text('x')
   }
-*/
+
   const addHandlers = () => {
     playZero()
     playOne()
@@ -58,7 +60,8 @@ const changeValue = () => {
     playSeven()
     playEight()
   }
-  module.exports = {
-    addHandlers
-  }
+*/
+
+module.exports = {
+  // addHandlers
 }
