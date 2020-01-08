@@ -32,22 +32,19 @@ const playEight = function () {
   $('#8').on('click', changeText)
 }
 const changeText = (event) => {
-  console.log(!($(event.target).hasClass('clicked')))
-  /* in if statement, if the contents of the parentheses is not true (!true)
-    no further code will run, in this case no text can be added if an element
-    has a class of clicked.
-  */
-  if (!($(event.target).hasClass('clicked'))) {
-    $(event.target).addClass('clicked')
-
-    $(event.target).text(player)
-    if (player === 'X') {
+  if (!($(event.target).hasClass('clicked'))) { // if the element has not been clicked,
+    $('#alert').text('')
+    $(event.target).addClass('clicked') // add the class clicked
+    $(event.target).text(player) // show the current player in the element
+    if (player === 'X') { // switch the player
       player = 'O'
       $('#message').text('Player O, You are up!')
     } else {
       player = 'X'
       $('#message').text('Player X, You are up!')
     }
+  } else {
+    $('#alert').text('Try another square!')
   }
 }
 
