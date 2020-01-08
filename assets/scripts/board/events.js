@@ -1,9 +1,10 @@
 'use strict'
 const store = require('../store')
+const winners = require('./winners')
 let player = 'X'
 const board = new Array(9)
 // [,,,,,,,,]
-
+store.board = board
 store.player = player
 // const gameOver = false
 
@@ -40,6 +41,7 @@ const changeText = (event) => {
     $('#alert').text('')
     board[event.target.id] = player
     console.log(board)
+    winners.checkWinner()
     $(event.target).addClass('clicked') // add the class clicked
     $(event.target).text(player) // show the current player in the element
     if (player === 'X') { // switch the player
