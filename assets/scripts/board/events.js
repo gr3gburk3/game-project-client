@@ -36,27 +36,31 @@ const playEight = function () {
   $('#8').on('click', changeText)
 }
 const changeText = (event) => {
-  console.log(event.target.id)
-  if (!($(event.target).hasClass('clicked'))) { // if the element has not been clicked,
-    $('#alert').text('')
-    board[event.target.id] = store.player
-    console.log(board)
-    winners.checkWinner()
-    winners.checkDraw()
-    $(event.target).addClass('clicked') // add the class clicked
-    $(event.target).text(store.player) // show the current player in the element
-    if (store.player === 'X') { // switch the player
-      store.player = 'O'
-      $('#player').text('Player O, You are up!')
-    } else {
-      store.player = 'X'
-      $('#player').text('Player X, You are up!')
-    }
+  if (store.gameOver) {
+    $('#alert').text('Game Over')
   } else {
-    $('#alert').text('Try another square!')
+    console.log(event.target.id)
+    if (!($(event.target).hasClass('clicked'))) { // if the element has not been clicked,
+      $('#alert').text('')
+      board[event.target.id] = store.player
+      console.log(board)
+      winners.checkWinner()
+      winners.checkDraw()
+      winners.noClick()
+      $(event.target).addClass('clicked') // add the class clicked
+      $(event.target).text(store.player) // show the current player in the element
+      if (store.player === 'X') { // switch the player
+        store.player = 'O'
+        $('#player').text('Player O, You are up!')
+      } else {
+        store.player = 'X'
+        $('#player').text('Player X, You are up!')
+      }
+    } else {
+      $('#alert').text('Try another square!')
+    }
   }
 }
-
 const addHandlers = () => {
   playZero()
   playOne()
