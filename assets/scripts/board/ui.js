@@ -1,6 +1,6 @@
 'use strict'
 
-const store = require('./../store.js')
+const store = require('../store')
 const signUpSuccess = response => {
   $('#message').text('Sign-up Successful!')
   $('#sign-up').hide()
@@ -42,6 +42,12 @@ const logoutSuccess = () => {
 const logoutFailure = () => {
   $('#message').text('Unsuccessful Log-Out')
 }
+/* const playerTurn = () => {
+  if (store.player === 'X') {
+    $('#message').text('Player X, You are up!')
+  }
+}
+*/
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -51,4 +57,5 @@ module.exports = {
   changePasswordFailure,
   logoutSuccess,
   logoutFailure
+  // playerTurn
 }

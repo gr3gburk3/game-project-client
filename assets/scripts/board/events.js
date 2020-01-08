@@ -1,6 +1,7 @@
 'use strict'
-
+const store = require('../store')
 let player = 'X'
+store.player = player
 // const gameOver = false
 
 const playZero = function () {
@@ -42,11 +43,14 @@ const changeText = (event) => {
     $(event.target).text(player)
     if (player === 'X') {
       player = 'O'
+      $('#message').text('Player O, You are up!')
     } else {
       player = 'X'
+      $('#message').text('Player X, You are up!')
     }
   }
 }
+
 const addHandlers = () => {
   playZero()
   playOne()
