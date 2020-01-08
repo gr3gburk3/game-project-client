@@ -1,11 +1,11 @@
 'use strict'
 const store = require('../store')
 const winners = require('./winners')
-let player = 'X'
+store.player = 'X'
 const board = new Array(9)
 // [,,,,,,,,]
 store.board = board
-store.player = player
+// store.player = player
 // const gameOver = false
 
 const playZero = function () {
@@ -39,16 +39,17 @@ const changeText = (event) => {
   console.log(event.target.id)
   if (!($(event.target).hasClass('clicked'))) { // if the element has not been clicked,
     $('#alert').text('')
-    board[event.target.id] = player
+    board[event.target.id] = store.player
     console.log(board)
     winners.checkWinner()
+    winners.checkDraw()
     $(event.target).addClass('clicked') // add the class clicked
-    $(event.target).text(player) // show the current player in the element
-    if (player === 'X') { // switch the player
-      player = 'O'
+    $(event.target).text(store.player) // show the current player in the element
+    if (store.player === 'X') { // switch the player
+      store.player = 'O'
       $('#player').text('Player O, You are up!')
     } else {
-      player = 'X'
+      store.player = 'X'
       $('#player').text('Player X, You are up!')
     }
   } else {
