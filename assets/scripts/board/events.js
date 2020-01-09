@@ -43,7 +43,7 @@ const changeText = (event) => {
     if (!($(event.target).hasClass('clicked'))) { // if the element has not been clicked,
       $('#alert').text('')
       store.board[event.target.id] = store.player
-      console.log(board)
+      console.log(store.board)
       winners.checkWinner()
       winners.checkDraw()
       winners.noClick()

@@ -49,7 +49,15 @@ const createGameSuccess = (response) => {
 }
 
 const createGameFailure = (response) => {
-  $('#alert').text('Game Created!')
+  $('#alert').text('Try Again!')
+}
+
+const updateGameSuccess = (data) => {
+  $('#alert').text('Game Updated!')
+}
+
+const updateGameFailure = (data) => {
+  $('#alert').text('Update Failed')
 }
 
 module.exports = {
@@ -62,5 +70,7 @@ module.exports = {
   logoutSuccess,
   logoutFailure,
   createGameSuccess,
-  createGameFailure
+  createGameFailure,
+  updateGameSuccess,
+  updateGameFailure
 }
