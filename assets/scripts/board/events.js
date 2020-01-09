@@ -1,6 +1,8 @@
 'use strict'
 const store = require('../store')
 const winners = require('./winners')
+const gameapi = require('./gameapi')
+const ui = require('./ui')
 store.player = 'X'
 const board = new Array(9)
 // [,,,,,,,,]
@@ -49,6 +51,11 @@ const changeText = (event) => {
       winners.noClick()
       $(event.target).addClass('clicked') // add the class clicked
       $(event.target).text(store.player) // show the current player in the element
+      const data = event.target.id
+      console.log(data)
+      gameapi.updateGame(data)
+        .then(ui.updateGameSuccess)
+        .catch(ui.updateGameFailure)
       if (store.player === 'X') { // switch the player
         store.player = 'O'
         $('#player').text('Player O, You are up!')
