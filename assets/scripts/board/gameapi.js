@@ -10,7 +10,6 @@ const createGame = function () {
       Authorization: 'Token token=' + store.user.token
     },
     data: {}
-    // data: data
   })
 }
 

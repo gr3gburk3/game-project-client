@@ -43,10 +43,15 @@ const logoutFailure = () => {
   $('#message').text('Unsuccessful Log-Out')
 }
 
-/* const createGamesSuccess = (response) => {
-  store.user = response.user
+const createGameSuccess = (response) => {
+  $('#alert').text('Game Created!')
+  store.game = response.game
 }
-*/
+
+const createGameFailure = (response) => {
+  $('#alert').text('Game Created!')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -55,5 +60,7 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   logoutSuccess,
-  logoutFailure
+  logoutFailure,
+  createGameSuccess,
+  createGameFailure
 }

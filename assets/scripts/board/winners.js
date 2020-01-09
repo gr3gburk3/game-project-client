@@ -38,10 +38,12 @@ const checkWinner = () => {
   }
 }
 const checkDraw = () => {
-  if (store.board.includes(undefined) === false) {
-    store.gameOver = true
-    console.log(store.gameOver)
-    $('#alert').text('Game is a draw!')
+  if (store.gameOver === false) {
+    if (store.board.includes(undefined) === false) {
+      store.gameOver = true
+      console.log(store.gameOver)
+      $('#alert').text('Game is a draw!')
+    }
   }
 }
 const noClick = () => {

@@ -42,7 +42,7 @@ const changeText = (event) => {
     console.log(event.target.id)
     if (!($(event.target).hasClass('clicked'))) { // if the element has not been clicked,
       $('#alert').text('')
-      board[event.target.id] = store.player
+      store.board[event.target.id] = store.player
       console.log(board)
       winners.checkWinner()
       winners.checkDraw()
@@ -66,7 +66,7 @@ const resetBoard = () => {
   store.board = new Array(9)
   store.player = 'X'
   store.gameOver = false
-  $('.reset').text('In Play')
+  $('.reset').text('In Play').removeClass('clicked')
 }
 const resetBoardSuccess = () => {
   $('#reset-button').on('click', resetBoard)

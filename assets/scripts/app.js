@@ -13,4 +13,5 @@ $(() => {
   $('#change-password').hide()
   $('#logout').hide()
   $('#sign-in').show()
+  $('#board').hide()
 })
