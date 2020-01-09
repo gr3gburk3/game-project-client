@@ -61,6 +61,17 @@ const changeText = (event) => {
     }
   }
 }
+const resetBoard = () => {
+  console.log('test')
+  store.board = new Array(9)
+  store.player = 'X'
+  store.gameOver = false
+  $('.reset').text('In Play')
+}
+const resetBoardSuccess = () => {
+  $('#reset-button').on('click', resetBoard)
+}
+
 const addHandlers = () => {
   playZero()
   playOne()
@@ -71,8 +82,10 @@ const addHandlers = () => {
   playSix()
   playSeven()
   playEight()
+  resetBoardSuccess()
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  resetBoard
 }

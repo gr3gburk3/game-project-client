@@ -42,10 +42,9 @@ const logoutSuccess = () => {
 const logoutFailure = () => {
   $('#message').text('Unsuccessful Log-Out')
 }
-/* const playerTurn = () => {
-  if (store.player === 'X') {
-    $('#message').text('Player X, You are up!')
-  }
+
+/* const createGamesSuccess = (response) => {
+  store.user = response.user
 }
 */
 module.exports = {
@@ -57,5 +56,4 @@ module.exports = {
   changePasswordFailure,
   logoutSuccess,
   logoutFailure
-  // playerTurn
 }
