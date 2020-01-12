@@ -7,7 +7,7 @@ const gameApi = require('./gameapi')
 const signUpSuccess = (response) => {
   console.log('hello')
   $('#message').text('Sign-up Successful!')
-  $('#sign-up').hide()
+  // $('#sign-up').hide()
   // $('#sign-in').hide()
   $('#change-password').show()
   $('#logout').show()
