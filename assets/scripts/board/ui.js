@@ -1,25 +1,31 @@
 'use strict'
 
 const store = require('../store')
-const signUpSuccess = response => {
+const gameApi = require('./gameapi')
+// const userEvents = require('./user-events')
+
+const signUpSuccess = (response) => {
+  console.log('hello')
   $('#message').text('Sign-up Successful!')
   $('#sign-up').hide()
   // $('#sign-in').hide()
-  // $('#change-password').show()
-  // $('#logout').show()
+  $('#change-password').show()
+  $('#logout').show()
 }
 
 const signUpFailure = () => {
   $('#message').text('Sign-up failed, please try again amigo')
 }
-const signInSuccess = response => {
+const signInSuccess = (response) => {
   $('#message').text('Sign-in Successful!')
   store.user = response.user
   console.log(store.user)
+  console.log(gameApi.retrieveGames)
   $('#sign-up').hide()
   $('#sign-in').hide()
   $('#change-password').show()
   $('#logout').show()
+  $(window).trigger('app-login', response)
 }
 const signInFailure = () => {
   $('#message').text('Try Again Friend')
@@ -37,6 +43,8 @@ const logoutSuccess = () => {
   $('#sign-in').show()
   $('#change-password').hide()
   $('#logout').hide()
+  $('#board').hide()
+  $(window).trigger('app-logout')
 }
 
 const logoutFailure = () => {
@@ -60,6 +68,15 @@ const updateGameFailure = (data) => {
   $('#alert').text('Update Failed')
 }
 
+const retrieveGamesSuccess = (data) => {
+  store.games = data.games
+  $('#message').text(`User has played ${store.games.length} games`)
+  // $('#alert').text()
+}
+const retrieveGamesFailure = (data) => {
+  console.log(data)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -72,5 +89,7 @@ module.exports = {
   createGameSuccess,
   createGameFailure,
   updateGameSuccess,
-  updateGameFailure
+  updateGameFailure,
+  retrieveGamesSuccess,
+  retrieveGamesFailure
 }

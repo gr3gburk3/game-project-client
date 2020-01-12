@@ -27,6 +27,7 @@ const changePassword = data => {
   })
 }
 const logout = () => {
+  console.log(store)
   return $.ajax({
     url: config.apiUrl + '/sign-out',
     method: 'DELETE',

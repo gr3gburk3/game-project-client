@@ -38,31 +38,38 @@ const playEight = function () {
   $('#8').on('click', changeText)
 }
 const changeText = (event) => {
-  if (store.gameOver) {
-    $('#alert').text('Game Over')
+  if (store.gameOver === true) {
+    return null
   } else {
     console.log(event.target.id)
     if (!($(event.target).hasClass('clicked'))) { // if the element has not been clicked,
       $('#alert').text('')
       store.board[event.target.id] = store.player
-      console.log(store.board)
-      winners.checkWinner()
-      winners.checkDraw()
-      winners.noClick()
       $(event.target).addClass('clicked') // add the class clicked
       $(event.target).text(store.player) // show the current player in the element
+      console.log(store.board)
+      console.log(winners.checkWinner())
+      console.log(winners.checkDraw())
+      if (winners.checkWinner() === true) {
+        store.gameOver = true
+        $('#player').text(`${store.player} Has Won!`)
+      } else if (winners.checkDraw() === true) {
+        store.gameOver = true
+        $('#alert').text('Game is a draw!')
+      } else {
+        if (store.player === 'X') { // switch the player
+          store.player = 'O'
+          $('#player').text('Player O, You are up!')
+        } else {
+          store.player = 'X'
+          $('#player').text('Player X, You are up!')
+        }
+      }
       const data = event.target.id
       console.log(data)
       gameapi.updateGame(data)
         .then(ui.updateGameSuccess)
         .catch(ui.updateGameFailure)
-      if (store.player === 'X') { // switch the player
-        store.player = 'O'
-        $('#player').text('Player O, You are up!')
-      } else {
-        store.player = 'X'
-        $('#player').text('Player X, You are up!')
-      }
     } else {
       $('#alert').text('Try another square!')
     }
@@ -77,6 +84,7 @@ const resetBoard = () => {
 }
 const resetBoardSuccess = () => {
   $('#reset-button').on('click', resetBoard)
+  $(window).on('app-logout', resetBoard)
 }
 
 const addHandlers = () => {
