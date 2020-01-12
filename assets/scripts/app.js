@@ -13,5 +13,7 @@ $(() => {
   $('#change-password').hide()
   $('#logout').hide()
   $('#sign-in').show()
+  $('#player').hide()
+  $('#reset-button').hide()
   $('#board').hide()
 })

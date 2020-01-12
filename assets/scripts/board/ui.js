@@ -11,6 +11,7 @@ const signUpSuccess = (response) => {
   // $('#sign-in').hide()
   $('#change-password').show()
   $('#logout').show()
+  $('#reset-button').show()
 }
 
 const signUpFailure = () => {
@@ -25,6 +26,9 @@ const signInSuccess = (response) => {
   $('#sign-in').hide()
   $('#change-password').show()
   $('#logout').show()
+  // $('#player').show()
+  $('#reset-button').show()
+  $('#alert').show()
   $(window).trigger('app-login', response)
 }
 const signInFailure = () => {
@@ -44,6 +48,9 @@ const logoutSuccess = () => {
   $('#change-password').hide()
   $('#logout').hide()
   $('#board').hide()
+  $('#reset-button').hide()
+  $('#player').hide()
+  $('#alert').hide()
   $(window).trigger('app-logout')
 }
 
@@ -54,6 +61,7 @@ const logoutFailure = () => {
 const createGameSuccess = (response) => {
   $('#alert').text('Game Created!')
   store.game = response.game
+  $('#player').show()
 }
 
 const createGameFailure = (response) => {
