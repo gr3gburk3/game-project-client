@@ -80,6 +80,7 @@ const resetBoard = () => {
   store.board = new Array(9)
   store.player = 'X'
   store.gameOver = false
+  $('#player').text('Player X is up!')
   $('.reset').text('In Play').removeClass('clicked')
 }
 const resetBoardSuccess = () => {

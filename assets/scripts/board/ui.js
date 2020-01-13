@@ -12,6 +12,7 @@ const signUpSuccess = (response) => {
   $('#change-password').show()
   $('#logout').show()
   $('#reset-button').show()
+  $('form').trigger('reset')
 }
 
 const signUpFailure = () => {
@@ -30,12 +31,14 @@ const signInSuccess = (response) => {
   $('#reset-button').show()
   $('#alert').show()
   $(window).trigger('app-login', response)
+  $('form').trigger('reset')
 }
 const signInFailure = () => {
   $('#message').text('Try Again Friend')
 }
 const changePasswordSuccess = () => {
   $('#message').text('Password Changed!')
+  $('form').trigger('reset')
 }
 
 const changePasswordFailure = () => {
