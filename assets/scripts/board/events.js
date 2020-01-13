@@ -55,7 +55,7 @@ const changeText = (event) => {
         $('#player').text(`Game Over! ${store.player} Has Won!`)
       } else if (winners.checkDraw() === true) {
         store.gameOver = true
-        $('#alert').text('Game is a draw!')
+        $('#player').text('Game is a draw!')
       } else {
         if (store.player === 'X') { // switch the player
           store.player = 'O'
