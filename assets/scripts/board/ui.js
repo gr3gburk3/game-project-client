@@ -9,14 +9,14 @@ const signUpSuccess = (response) => {
   $('#message').text('Sign-up Successful!')
   // $('#sign-up').hide()
   // $('#sign-in').hide()
-  $('#change-password').show()
+  // $('#change-password').show()
   $('#logout').show()
-  $('#reset-button').show()
   $('form').trigger('reset')
 }
 
 const signUpFailure = () => {
   $('#message').text('Sign-up failed, please try again amigo')
+  $('form').trigger('reset')
 }
 const signInSuccess = (response) => {
   $('#message').text('Sign-in Successful!')
@@ -43,6 +43,7 @@ const changePasswordSuccess = () => {
 
 const changePasswordFailure = () => {
   $('#message').text('Try Again')
+  $('form').trigger('reset')
 }
 const logoutSuccess = () => {
   $('#message').text('See you next time!')
