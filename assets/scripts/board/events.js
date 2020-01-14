@@ -3,7 +3,7 @@ const store = require('../store')
 const winners = require('./winners')
 const gameapi = require('./gameapi')
 const ui = require('./ui')
-const userevents = require('./user-events')
+// const userevents = require('./user-events')
 store.player = 'X'
 const board = new Array(9)
 // [,,,,,,,,]
@@ -42,7 +42,7 @@ const changeText = (event) => {
   if (store.gameOver === true) {
     return null
   } else {
-    console.log(event.target.id)
+    // console.log(event.target.id)
     if (!($(event.target).hasClass('clicked'))) { // if the element has not been clicked,
       $('#alert').text('')
       store.board[event.target.id] = store.player
@@ -67,7 +67,7 @@ const changeText = (event) => {
         }
       }
       const data = event.target.id
-      console.log(data)
+      // console.log(data)
       gameapi.updateGame(data)
         .then(ui.updateGameSuccess)
         .catch(ui.updateGameFailure)
@@ -77,7 +77,7 @@ const changeText = (event) => {
   }
 }
 const resetBoard = () => {
-  console.log('test')
+  // console.log('test')
   store.board = new Array(9)
   store.player = 'X'
   store.gameOver = false

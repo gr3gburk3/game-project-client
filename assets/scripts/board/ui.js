@@ -5,7 +5,7 @@ const gameApi = require('./gameapi')
 // const userEvents = require('./user-events')
 
 const signUpSuccess = (response) => {
-  console.log('hello')
+  // console.log('hello')
   $('#message').text('Sign-up Successful!')
   // $('#sign-up').hide()
   // $('#sign-in').hide()
@@ -22,8 +22,8 @@ const signInSuccess = (response) => {
   $('#message').show()
   $('#message').text('Sign-in Successful!')
   store.user = response.user
-  console.log(store.user)
-  console.log(gameApi.retrieveGames)
+  // console.log(store.user)
+  // console.log(gameApi.retrieveGames)
   $('#sign-up').hide()
   $('#sign-in').hide()
   $('#change-password').show()
@@ -92,7 +92,7 @@ const retrieveGamesSuccess = (data) => {
   // $('#alert').text()
 }
 const retrieveGamesFailure = (data) => {
-  console.log(data)
+  // console.log(data)
 }
 
 module.exports = {

@@ -40,11 +40,11 @@ const onCreateGame = function () {
   $('#board').show()
   gameapi.createGame()
     .then(ui.createGameSuccess)
+    .then(onRetrieveGames)
     .catch(ui.createGameFailure)
 }
 const onRetrieveGames = function (evt, response) {
-  console.log(evt, response)
-  evt.preventDefault()
+  // console.log(evt, response)
   gameapi.retrieveGames()
     .then(ui.retrieveGamesSuccess)
     .catch(ui.retrieveGamesFailure)
@@ -57,7 +57,7 @@ const addHandlers = () => {
   $('#logout').on('submit', onLogout)
   $('#reset-button').on('click', onCreateGame)
   // $('#sign-in').on('submit', onRetrieveGames)
-  $(window).on('app-login', onRetrieveGames)
+  // $(window).on('app-login', onRetrieveGames)
 }
 
 module.exports = {
