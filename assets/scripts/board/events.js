@@ -82,6 +82,7 @@ const resetBoard = () => {
   store.gameOver = false
   $('#player').text('Player X is up!')
   $('.reset').text('In Play').removeClass('clicked')
+  $('#message').text('Game in Progess')
 }
 const resetBoardSuccess = () => {
   $('#reset-button').on('click', resetBoard)

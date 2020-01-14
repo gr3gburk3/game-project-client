@@ -19,6 +19,7 @@ const signUpFailure = () => {
   $('form').trigger('reset')
 }
 const signInSuccess = (response) => {
+  $('#message').show()
   $('#message').text('Sign-in Successful!')
   store.user = response.user
   console.log(store.user)
@@ -59,6 +60,7 @@ const logoutSuccess = () => {
   $('#alert').text('')
   $(window).trigger('app-logout')
   $('#games-played').hide()
+  $('#message').hide()
   // $('#alert').hide()
 }
 
