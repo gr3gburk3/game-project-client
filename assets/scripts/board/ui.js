@@ -6,7 +6,7 @@ const gameApi = require('./gameapi')
 
 const signUpSuccess = (response) => {
   // console.log('hello')
-  $('#message').text('Sign-up Successful!')
+  $('#message').show().text('Sign-up Successful!')
   // $('#sign-up').hide()
   // $('#sign-in').hide()
   // $('#change-password').show()
@@ -33,7 +33,7 @@ const signInSuccess = (response) => {
   $('#alert').text('Welcome')
   $(window).trigger('app-login', response)
   $('form').trigger('reset')
-  $('#games-played').show()
+  $('#games-played').show().text('')
 }
 const signInFailure = () => {
   $('#message').show().text('Try Again Friend')
@@ -61,6 +61,7 @@ const logoutSuccess = () => {
   $(window).trigger('app-logout')
   $('#games-played').hide()
   $('#message').hide()
+  $('#')
   // $('#alert').hide()
 }
 
