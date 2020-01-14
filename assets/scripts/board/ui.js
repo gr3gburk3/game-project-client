@@ -15,7 +15,7 @@ const signUpSuccess = (response) => {
 }
 
 const signUpFailure = () => {
-  $('#message').text('Sign-up failed, please try again amigo')
+  $('#message').show().text('Sign-up failed, please try again amigo')
   $('form').trigger('reset')
 }
 const signInSuccess = (response) => {
@@ -36,7 +36,7 @@ const signInSuccess = (response) => {
   $('#games-played').show()
 }
 const signInFailure = () => {
-  $('#message').text('Try Again Friend')
+  $('#message').show().text('Try Again Friend')
 }
 const changePasswordSuccess = () => {
   $('#message').text('Password Changed!')

@@ -3,6 +3,7 @@ const store = require('../store')
 const winners = require('./winners')
 const gameapi = require('./gameapi')
 const ui = require('./ui')
+const userevents = require('./user-events')
 store.player = 'X'
 const board = new Array(9)
 // [,,,,,,,,]
@@ -83,6 +84,7 @@ const resetBoard = () => {
   $('#player').text('Player X is up!')
   $('.reset').text('In Play').removeClass('clicked')
   $('#message').text('Game in Progess')
+  // userevents.onRetrieveGames()
 }
 const resetBoardSuccess = () => {
   $('#reset-button').on('click', resetBoard)
