@@ -10,7 +10,7 @@ const signUpSuccess = (response) => {
   // $('#sign-up').hide()
   // $('#sign-in').hide()
   // $('#change-password').show()
-  $('#logout').show()
+  // $('#logout').show()
   $('form').trigger('reset')
 }
 
