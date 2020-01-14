@@ -29,9 +29,10 @@ const signInSuccess = (response) => {
   $('#logout').show()
   // $('#player').show()
   $('#reset-button').show()
-  $('#alert').show()
+  $('#alert').text('Welcome')
   $(window).trigger('app-login', response)
   $('form').trigger('reset')
+  $('#games-played').show()
 }
 const signInFailure = () => {
   $('#message').text('Try Again Friend')
@@ -44,6 +45,7 @@ const changePasswordSuccess = () => {
 const changePasswordFailure = () => {
   $('#message').text('Try Again')
   $('form').trigger('reset')
+  $('#message').show()
 }
 const logoutSuccess = () => {
   $('#message').text('See you next time!')
@@ -54,8 +56,10 @@ const logoutSuccess = () => {
   $('#board').hide()
   $('#reset-button').hide()
   $('#player').hide()
-  $('#alert').hide()
+  $('#alert').text('')
   $(window).trigger('app-logout')
+  $('#games-played').hide()
+  // $('#alert').hide()
 }
 
 const logoutFailure = () => {
@@ -82,7 +86,7 @@ const updateGameFailure = (data) => {
 
 const retrieveGamesSuccess = (data) => {
   store.games = data.games
-  $('#message').text(`User has played ${store.games.length} games`)
+  $('#games-played').text(`User has played ${store.games.length} games`)
   // $('#alert').text()
 }
 const retrieveGamesFailure = (data) => {
