@@ -2,15 +2,30 @@
 
 body {
   align-items: center;
+  background-color: #9b9e9c;
+  font-family: cursive;
 }
 
 h1 {
   text-align: center;
 }
-
-.gameBox {
+/*
+.grid {
   height: 100px;
   width: 100px;
+}
+*/
+.gameBox {
+  height: 100px;
+  // width: 100px;
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.grid {
+  padding: 30px;
+  text-align: center;
 }
 
 .v {
