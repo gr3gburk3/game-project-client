@@ -7,3 +7,18 @@ body {
 h1 {
   text-align: center;
 }
+
+.gameBox {
+  height: 100px;
+  width: 100px;
+}
+
+.v {
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
+
+.h {
+  border-bottom: 1px solid #000;
+  border-top: 1px solid #000;
+}

@@ -48,9 +48,9 @@ const changeText = (event) => {
       store.board[event.target.id] = store.player
       $(event.target).addClass('clicked') // add the class clicked
       $(event.target).text(store.player) // show the current player in the element
-      console.log(store.board)
-      console.log(winners.checkWinner())
-      console.log(winners.checkDraw())
+      // console.log(store.board)
+      // console.log(winners.checkWinner())
+      // console.log(winners.checkDraw())
       if (winners.checkWinner() === true) {
         store.gameOver = true
         $('#player').text(`${store.player} Wins! Click Start Game button to play again!`)
