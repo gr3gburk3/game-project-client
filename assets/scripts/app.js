@@ -16,5 +16,5 @@ $(() => {
   $('#player').hide()
   $('#reset-button').hide()
   $('#board').hide()
-  // $('#board-text').hide()
+  $('.board-text').hide()
 })

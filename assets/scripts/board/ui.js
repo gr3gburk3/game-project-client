@@ -34,6 +34,7 @@ const signInSuccess = (response) => {
   $(window).trigger('app-login', response)
   $('form').trigger('reset')
   $('#games-played').show().text('')
+  $('.board-text').show()
 }
 const signInFailure = () => {
   $('#message').show().text('Try Again Friend')
@@ -61,7 +62,7 @@ const logoutSuccess = () => {
   $(window).trigger('app-logout')
   $('#games-played').hide()
   $('#message').hide()
-  $('#')
+  $('.board-text').hide()
   // $('#alert').hide()
 }
 
