@@ -53,7 +53,7 @@ const changeText = (event) => {
       console.log(winners.checkDraw())
       if (winners.checkWinner() === true) {
         store.gameOver = true
-        $('#player').text(`Game Over! ${store.player} Has Won!`)
+        $('#player').text(`${store.player} Wins!. Click Start Game button to play again!`)
       } else if (winners.checkDraw() === true) {
         store.gameOver = true
         $('#player').text('Game is a draw!')
