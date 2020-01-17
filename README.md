@@ -50,7 +50,7 @@ learning experience.
 * I would like to create an AI bot for single-player use.
 
 ### Images
-* [Wireframe] (https://imgur.com/2er0drz)
+* [Wireframe](https://imgur.com/2er0drz)
 
 
 
