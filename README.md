@@ -48,6 +48,7 @@ learning experience.
 * I would like to add custom tokens.
 * I would like to allow this application to be mobile-friendly.
 * I would like to create an AI bot for single-player use.
+* I would like to continue UI development.
 
 ### Images
 * [Wireframe](https://imgur.com/2er0drz)
